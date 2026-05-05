@@ -33,11 +33,17 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 .header {
   position: sticky;
   top: 0;
   z-index: 50;
-  height: 76px;
+  min-height: 76px;
   padding: 0 6vw;
   display: flex;
   align-items: center;
@@ -49,16 +55,15 @@ a {
 
 .brand-small {
   display: flex;
-  gap: 12px;
   align-items: center;
-  font-family: 'Newsreader', serif;
-  color: var(--olive);
-  font-size: 20px;
+  width: 190px;
+  max-width: 42vw;
 }
 
-.brand-small .logo-mark {
-  width: 36px;
-  height: 36px;
+.header-logo {
+  width: 155px;
+  height: auto;
+  object-fit: contain;
 }
 
 .header nav {
@@ -188,80 +193,29 @@ h3 {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 40px;
+  padding: 48px 40px;
   box-shadow: 0 30px 80px rgba(71, 72, 58, 0.08);
 }
 
-.hero-card .logo-mark {
-  width: 150px;
-  height: 150px;
-  margin-bottom: 30px;
-}
-
-.hero-card h2 {
-  font-size: clamp(38px, 5vw, 64px);
-  letter-spacing: 0.08em;
-  color: var(--dark);
-}
-
-.hero-card p {
-  font-family: 'Newsreader', serif;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--olive);
+.hero-logo {
+  width: 390px;
+  max-width: 88%;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
 }
 
 .hero-card span {
   color: var(--olive);
-  margin-top: 26px;
-  font-size: 18px;
+  margin-top: 24px;
+  font-size: 16px;
 }
 
-.logo-mark {
-  position: relative;
-  width: 90px;
-  height: 90px;
-}
-
-.logo-mark .leaf {
-  position: absolute;
-  bottom: 10%;
-  width: 42%;
-  height: 58%;
-  border: 5px solid var(--olive);
-  border-bottom: 0;
-  border-radius: 90% 0 90% 0;
-}
-
-.logo-mark .left {
-  left: 10%;
-  transform: rotate(-42deg);
-}
-
-.logo-mark .right {
-  right: 10%;
-  transform: rotate(42deg) scaleX(-1);
-}
-
-.logo-mark .sun {
-  position: absolute;
-  top: 36%;
-  left: 50%;
-  width: 12px;
-  height: 12px;
-  background: var(--olive);
-  border-radius: 50%;
-  transform: translateX(-50%);
-}
-
-.logo-mark .arc {
-  position: absolute;
-  top: 10%;
-  left: 16%;
-  width: 68%;
-  height: 42%;
-  border-top: 4px solid var(--olive);
-  border-radius: 50%;
+.section-icon-logo {
+  width: 42px;
+  height: auto;
+  margin: 0 auto 18px;
+  object-fit: contain;
 }
 
 .essence {
@@ -431,19 +385,27 @@ h3 {
 
 .box {
   width: 200px;
-  height: 330px;
+  min-height: 330px;
   background: linear-gradient(90deg, #b58f5f, #d3b37d 18%, #f0e6d4 18%, #f0e6d4 82%, #b58f5f 82%);
   border-radius: 10px;
-  padding: 34px 20px;
+  padding: 28px 20px;
   text-align: center;
   color: var(--dark);
   box-shadow: 0 18px 35px rgba(0, 0, 0, 0.22);
 }
 
-.box .logo-mark {
-  width: 52px;
-  height: 52px;
-  margin: 0 auto 18px;
+.package-logo {
+  width: 104px;
+  height: auto;
+  margin: 0 auto 16px;
+  object-fit: contain;
+}
+
+.mini-logo {
+  width: 42px;
+  height: auto;
+  margin: 0 auto 12px;
+  object-fit: contain;
 }
 
 .box h4 {
@@ -466,7 +428,7 @@ h3 {
 }
 
 .box.open {
-  height: 190px;
+  min-height: 190px;
   transform: rotate(-4deg);
   align-self: flex-end;
   background: #caa872;
@@ -534,8 +496,11 @@ h3 {
   background: rgba(255, 255, 255, 0.55);
 }
 
-.final-cta svg {
-  color: var(--olive);
+.cta-logo {
+  width: 52px;
+  height: auto;
+  margin: 0 auto 18px;
+  object-fit: contain;
 }
 
 .final-cta p {
@@ -553,15 +518,16 @@ h3 {
   color: var(--olive);
 }
 
-.footer .logo-mark {
-  width: 34px;
-  height: 34px;
+.footer-logo {
+  width: 92px;
+  height: auto;
+  object-fit: contain;
 }
 
 .footer > div:first-child {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
 .footer-links {
@@ -579,10 +545,27 @@ h3 {
 @media (max-width: 900px) {
   .header {
     padding: 0 20px;
+    min-height: 68px;
+  }
+
+  .brand-small {
+    width: 150px;
+  }
+
+  .header-logo {
+    width: 132px;
+  }
+
+  .header nav {
+    gap: 14px;
   }
 
   .header nav a:not(.nav-cta) {
     display: none;
+  }
+
+  .section {
+    padding: 72px 22px;
   }
 
   .hero,
@@ -593,7 +576,8 @@ h3 {
   .hero {
     min-height: auto;
     text-align: center;
-    padding-top: 70px;
+    padding-top: 64px;
+    gap: 44px;
   }
 
   .actions {
@@ -608,6 +592,16 @@ h3 {
 
   .hero-card {
     min-height: 360px;
+    padding: 36px 24px;
+  }
+
+  .hero-logo {
+    width: 280px;
+    max-width: 92%;
+  }
+
+  .section-icon-logo {
+    width: 36px;
   }
 
   .mockup {
@@ -617,7 +611,11 @@ h3 {
 
   .box {
     width: 180px;
-    height: 285px;
+    min-height: 285px;
+  }
+
+  .package-logo {
+    width: 86px;
   }
 
   .box.open {
@@ -627,5 +625,13 @@ h3 {
   .footer {
     flex-direction: column;
     text-align: center;
+  }
+
+  .footer > div:first-child {
+    flex-direction: column;
+  }
+
+  .footer-logo {
+    width: 78px;
   }
 }

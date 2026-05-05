@@ -198,7 +198,7 @@ function Collections() {
       <div className="section-title">
         <BrandLogo variant="icon" className="section-icon-logo" />
 
-        <h2>Nuestras colecciones</h2>
+        <h2>Nuestras Colecciones</h2>
 
         <p>
           Descubrí el mundo de Bio Armonía: líneas creadas para cada rutina, piel o momento especial.

@@ -33,33 +33,64 @@ const collections = [
     title: 'Esenciales del Jardín',
     tag: 'Cuidado diario',
     description: 'Limpieza suave, ingredientes nobles y cuidado botánico para todos los días.',
-    products: ['Nube de Avena', 'Panal de Seda', 'Savia Serena', 'Brisa de Menta', 'Respiro del Monte', 'Luz de Manzanilla'],
+    products: [
+      'Nube de Avena',
+      'Panal de Seda',
+      'Savia Serena',
+      'Brisa de Menta',
+      'Respiro del Monte',
+      'Luz de Manzanilla'
+    ],
     icon: Leaf,
     accent: 'olive',
+    image: '/images/Linea A_Esenciales del Jardin_website.png',
   },
   {
     title: 'Rituales del Cuerpo',
     tag: 'Spa en casa',
     description: 'Una experiencia de bienestar, exfoliación, textura, aroma y pausa corporal.',
-    products: ['Bruma de Lavanda', 'Cumbre Mineral', 'Fibra Viva', 'Carbón Noble', 'Pulso Sereno', 'Rosa de Alba'],
+    products: [
+      'Bruma de Lavanda',
+      'Cumbre Mineral',
+      'Fibra Viva',
+      'Carbón Noble',
+      'Pulso Sereno',
+      'Rosa de Alba'
+    ],
     icon: Droplets,
     accent: 'lavender',
+    image: '/images/Linea B_Rituales del Cuerpo_website.png',
   },
   {
     title: 'Cuidado Sensible',
     tag: 'Suavidad extrema',
     description: 'Una línea para pieles delicadas, bebé, piel madura y cuidado familiar.',
-    products: ['Primer Abrazo', 'Abrazo Sereno', 'Nube de Cuna', 'Luna de Sábila', 'Nido de Miel'],
+    products: [
+      'Primer Abrazo',
+      'Abrazo Sereno',
+      'Nube de Cuna',
+      'Luna de Sábila',
+      'Nido de Miel'
+    ],
     icon: Baby,
     accent: 'blush',
+    image: '/images/Linea C_Cuidado sensible_website.png',
   },
   {
     title: 'Detalles del Jardín',
     tag: 'Para regalar',
     description: 'Pequeños jabones, formas especiales, kits y detalles hechos con cuidado.',
-    products: ['Flores del Jardín', 'Osito de Cuna', 'Angelito de Miel', 'Mini Abrazo', 'Caja Jardín', 'Edición de Estación'],
+    products: [
+      'Flores del Jardín',
+      'Osito de Cuna',
+      'Angelito de Miel',
+      'Mini Abrazo',
+      'Caja Jardín',
+      'Edición de Estación'
+    ],
     icon: Flower2,
     accent: 'rose',
+    image: '/images/Linea D_Detalles del Jardin_website.png',
   },
 ];
 
@@ -202,24 +233,40 @@ function Collections() {
       </div>
 
       <div className="collection-grid">
-        {collections.map(({ title, tag, description, products, icon: Icon, accent }) => (
+        {collections.map(({ title, tag, description, products, icon: Icon, accent, image }) => (
           <article className={`collection-card ${accent}`} key={title}>
-            <div className="collection-top">
-              <div className="collection-icon">
-                <Icon size={24} />
-              </div>
-
-              <span>{tag}</span>
+            <div className="collection-image-wrap">
+              <img
+                src={image}
+                alt={`${title} - Bio Armonía`}
+                className="collection-image"
+                loading="lazy"
+              />
             </div>
 
-            <h3>{title}</h3>
-            <p>{description}</p>
+            <div className="collection-content">
+              <div className="collection-top">
+                <div className="collection-icon">
+                  <Icon size={24} />
+                </div>
 
-            <ul>
-              {products.slice(0, 4).map((product) => (
-                <li key={product}>{product}</li>
-              ))}
-            </ul>
+                <span>{tag}</span>
+              </div>
+
+              <h3>{title}</h3>
+
+              <p>{description}</p>
+
+              <ul>
+                {products.map((product) => (
+                  <li key={product}>{product}</li>
+                ))}
+              </ul>
+
+              <a href={whatsappLink} target="_blank" rel="noreferrer" className="collection-cta">
+                Consultar esta línea
+              </a>
+            </div>
           </article>
         ))}
       </div>

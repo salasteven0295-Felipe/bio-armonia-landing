@@ -23,7 +23,7 @@ const facebookUrl = 'https://www.facebook.com/profile.php?id=100066801256439';
 const whatsappText = 'Hola, quiero recibir el catálogo de Bio Armonía';
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
 
-// LOGOS - usando los nombres exactos que tenés ahorita en public/images
+// LOGOS
 const logoPrincipal = '/images/logo-principal.png';
 const logoCircular = '/images/Logo Circular_claro.png';
 const iconoMarca = '/images/Icono (2).png';
@@ -32,65 +32,38 @@ const collections = [
   {
     title: 'Esenciales del Jardín',
     tag: 'Cuidado diario',
-    description: 'Limpieza suave, ingredientes nobles y cuidado botánico para todos los días.',
-    products: [
-      'Nube de Avena',
-      'Panal de Seda',
-      'Savia Serena',
-      'Brisa de Menta',
-      'Respiro del Monte',
-      'Luz de Manzanilla'
-    ],
+    description: 'Una línea pensada para volver simple y bonito el cuidado de todos los días.',
+    ideal: 'Ideal para rutinas diarias, piel que busca suavidad y personas que quieren empezar con lo natural.',
     icon: Leaf,
     accent: 'olive',
-    image: '/images/Linea A_Esenciales del Jardin_website.png',
+    image: '/images/linea-a-esenciales-jardin.png',
   },
   {
     title: 'Rituales del Cuerpo',
     tag: 'Spa en casa',
-    description: 'Una experiencia de bienestar, exfoliación, textura, aroma y pausa corporal.',
-    products: [
-      'Bruma de Lavanda',
-      'Cumbre Mineral',
-      'Fibra Viva',
-      'Carbón Noble',
-      'Pulso Sereno',
-      'Rosa de Alba'
-    ],
+    description: 'Una pausa sensorial para transformar la ducha en un momento de calma y bienestar.',
+    ideal: 'Ideal para quienes disfrutan aromas, texturas, exfoliación suave y una experiencia más tipo spa en casa.',
     icon: Droplets,
     accent: 'lavender',
-    image: '/images/Linea B_Rituales del Cuerpo_website.png',
+    image: '/images/linea-b-rituales-cuerpo.png',
   },
   {
     title: 'Cuidado Sensible',
     tag: 'Suavidad extrema',
-    description: 'Una línea para pieles delicadas, bebé, piel madura y cuidado familiar.',
-    products: [
-      'Primer Abrazo',
-      'Abrazo Sereno',
-      'Nube de Cuna',
-      'Luna de Sábila',
-      'Nido de Miel'
-    ],
+    description: 'Una línea delicada para acompañar la piel con suavidad, calma y mucho cuidado.',
+    ideal: 'Ideal para pieles sensibles, cuidado familiar y momentos donde lo simple también puede sentirse especial.',
     icon: Baby,
     accent: 'blush',
-    image: '/images/Linea C_Cuidado sensible_website.png',
+    image: '/images/linea-c-cuidado-sensible.png',
   },
   {
     title: 'Detalles del Jardín',
     tag: 'Para regalar',
-    description: 'Pequeños jabones, formas especiales, kits y detalles hechos con cuidado.',
-    products: [
-      'Flores del Jardín',
-      'Osito de Cuna',
-      'Angelito de Miel',
-      'Mini Abrazo',
-      'Caja Jardín',
-      'Edición de Estación'
-    ],
+    description: 'Pequeños detalles artesanales para regalar algo útil, bonito y hecho con intención.',
+    ideal: 'Ideal para obsequios, detalles personalizados, recuerdos y momentos donde querés compartir bienestar.',
     icon: Flower2,
     accent: 'rose',
-    image: '/images/Linea D_Detalles del Jardin_website.png',
+    image: '/images/linea-d-detalles-jardin.png',
   },
 ];
 
@@ -233,7 +206,7 @@ function Collections() {
       </div>
 
       <div className="collection-grid">
-        {collections.map(({ title, tag, description, products, icon: Icon, accent, image }) => (
+        {collections.map(({ title, tag, description, ideal, icon: Icon, accent, image }) => (
           <article className={`collection-card ${accent}`} key={title}>
             <div className="collection-image-wrap">
               <img
@@ -255,13 +228,9 @@ function Collections() {
 
               <h3>{title}</h3>
 
-              <p>{description}</p>
+              <p className="collection-description">{description}</p>
 
-              <ul>
-                {products.map((product) => (
-                  <li key={product}>{product}</li>
-                ))}
-              </ul>
+              <p className="collection-ideal">{ideal}</p>
 
               <a href={whatsappLink} target="_blank" rel="noreferrer" className="collection-cta">
                 Consultar esta línea

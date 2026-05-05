@@ -255,9 +255,6 @@ function Packaging() {
         />
       </div>
 
-      <div className="packaging-copy">
-        <p className="eyebrow">Aplicación de marca</p>
-
         <h2>Empaques que cuidan tu jabón y el planeta</h2>
 
         <p>

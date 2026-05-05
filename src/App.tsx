@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import {
   MessageCircle,
   Leaf,
@@ -11,7 +13,8 @@ import {
   Droplets,
   Instagram,
   Facebook,
-  Truck
+  Truck,
+  ChevronDown
 } from 'lucide-react';
 
 // CONFIGURACIÓN PRINCIPAL
@@ -37,6 +40,38 @@ const collections = [
     icon: Leaf,
     accent: 'olive',
     image: '/images/linea-a-esenciales-jardin.png',
+    soaps: [
+      {
+        name: 'Nube de Avena',
+        primary: 'Avena + miel',
+        benefit: 'Limpieza suave para todos los días.'
+      },
+      {
+        name: 'Panal de Seda',
+        primary: 'Miel de abeja',
+        benefit: 'Cuidado diario con sensación nutritiva.'
+      },
+      {
+        name: 'Savia Serena',
+        primary: 'Sábila natural',
+        benefit: 'Frescura y suavidad para la piel.'
+      },
+      {
+        name: 'Brisa de Menta',
+        primary: 'Menta fresca',
+        benefit: 'Sensación revitalizante y fresca.'
+      },
+      {
+        name: 'Respiro del Monte',
+        primary: 'Romero + eucalipto',
+        benefit: 'Limpieza herbal con sensación refrescante.'
+      },
+      {
+        name: 'Luz de Manzanilla',
+        primary: 'Manzanilla',
+        benefit: 'Cuidado suave para una piel luminosa.'
+      },
+    ],
   },
   {
     title: 'Rituales del Cuerpo',
@@ -46,6 +81,38 @@ const collections = [
     icon: Droplets,
     accent: 'lavender',
     image: '/images/linea-b-rituales-cuerpo.png',
+    soaps: [
+      {
+        name: 'Bruma de Lavanda',
+        primary: 'Lavanda',
+        benefit: 'Aroma relajante para una pausa nocturna.'
+      },
+      {
+        name: 'Cumbre Mineral',
+        primary: 'Sal mineral',
+        benefit: 'Exfoliación natural y textura renovadora.'
+      },
+      {
+        name: 'Fibra Viva',
+        primary: 'Esponja natural',
+        benefit: 'Exfoliación corporal con sensación de spa.'
+      },
+      {
+        name: 'Carbón Noble',
+        primary: 'Carbón activado',
+        benefit: 'Limpieza profunda y sensación purificante.'
+      },
+      {
+        name: 'Pulso Sereno',
+        primary: 'Barra de masaje',
+        benefit: 'Pausa corporal y experiencia sensorial.'
+      },
+      {
+        name: 'Rosa de Alba',
+        primary: 'Rosa / rosa mosqueta',
+        benefit: 'Suavidad floral y cuidado delicado.'
+      },
+    ],
   },
   {
     title: 'Cuidado Sensible',
@@ -55,6 +122,33 @@ const collections = [
     icon: Baby,
     accent: 'blush',
     image: '/images/linea-c-cuidado-sensible.png',
+    soaps: [
+      {
+        name: 'Primer Abrazo',
+        primary: 'Cuidado suave',
+        benefit: 'Pensado para piel delicada y rutinas tiernas.'
+      },
+      {
+        name: 'Abrazo Sereno',
+        primary: 'Fórmula amable',
+        benefit: 'Ideal para piel madura o sensible.'
+      },
+      {
+        name: 'Nube de Cuna',
+        primary: 'Manzanilla + miel',
+        benefit: 'Suavidad diaria con sensación calmante.'
+      },
+      {
+        name: 'Luna de Sábila',
+        primary: 'Sábila',
+        benefit: 'Frescura suave para piel delicada.'
+      },
+      {
+        name: 'Nido de Miel',
+        primary: 'Miel natural',
+        benefit: 'Baño tierno con sensación nutritiva.'
+      },
+    ],
   },
   {
     title: 'Detalles del Jardín',
@@ -64,6 +158,38 @@ const collections = [
     icon: Flower2,
     accent: 'rose',
     image: '/images/linea-d-detalles-jardin.png',
+    soaps: [
+      {
+        name: 'Flores del Jardín',
+        primary: 'Jabones florales',
+        benefit: 'Detalles decorativos para regalar.'
+      },
+      {
+        name: 'Osito de Cuna',
+        primary: 'Figura tierna',
+        benefit: 'Ideal para bebé, recuerdos o regalos especiales.'
+      },
+      {
+        name: 'Angelito de Miel',
+        primary: 'Pieza simbólica',
+        benefit: 'Detalle delicado con intención artesanal.'
+      },
+      {
+        name: 'Mini Abrazo',
+        primary: 'Mini jabones',
+        benefit: 'Perfectos para detalles, kits o pequeños obsequios.'
+      },
+      {
+        name: 'Caja Jardín',
+        primary: 'Set de regalo',
+        benefit: 'Presentación lista para entregar.'
+      },
+      {
+        name: 'Edición de Estación',
+        primary: 'Temporada',
+        benefit: 'Detalles especiales según disponibilidad.'
+      },
+    ],
   },
 ];
 
@@ -192,6 +318,79 @@ function BrandEssence() {
   );
 }
 
+function CollectionCard({
+  collection,
+}: {
+  collection: typeof collections[number];
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const Icon = collection.icon;
+
+  return (
+    <article className={`collection-card ${collection.accent}`}>
+      <div className="collection-image-wrap">
+        <img
+          src={collection.image}
+          alt={`${collection.title} - Bio Armonía`}
+          className="collection-image"
+          loading="lazy"
+        />
+      </div>
+
+      <div className="collection-content">
+        <div className="collection-top">
+          <div className="collection-icon">
+            <Icon size={24} />
+          </div>
+
+          <span>{collection.tag}</span>
+        </div>
+
+        <h3>{collection.title}</h3>
+
+        <p className="collection-description">{collection.description}</p>
+
+        <p className="collection-ideal">{collection.ideal}</p>
+
+        <button
+          type="button"
+          className={`collection-dropdown-trigger ${isOpen ? 'is-open' : ''}`}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
+        >
+          <span>Ver jabones de esta línea</span>
+          <ChevronDown size={18} />
+        </button>
+
+        {isOpen && (
+          <div className="collection-dropdown">
+            <div className="soap-list">
+              {collection.soaps.map((soap) => (
+                <div className="soap-item" key={soap.name}>
+                  <div>
+                    <strong>{soap.name}</strong>
+                    <span>{soap.primary}</span>
+                  </div>
+
+                  <p>{soap.benefit}</p>
+                </div>
+              ))}
+            </div>
+
+            <p className="collection-note">
+              Podés adquirir la colección completa o elegir tus jabones favoritos por separado, según disponibilidad.
+            </p>
+          </div>
+        )}
+
+        <a href={whatsappLink} target="_blank" rel="noreferrer" className="collection-cta">
+          Consultar esta línea
+        </a>
+      </div>
+    </article>
+  );
+}
+
 function Collections() {
   return (
     <section id="colecciones" className="section collections">
@@ -206,37 +405,8 @@ function Collections() {
       </div>
 
       <div className="collection-grid">
-        {collections.map(({ title, tag, description, ideal, icon: Icon, accent, image }) => (
-          <article className={`collection-card ${accent}`} key={title}>
-            <div className="collection-image-wrap">
-              <img
-                src={image}
-                alt={`${title} - Bio Armonía`}
-                className="collection-image"
-                loading="lazy"
-              />
-            </div>
-
-            <div className="collection-content">
-              <div className="collection-top">
-                <div className="collection-icon">
-                  <Icon size={24} />
-                </div>
-
-                <span>{tag}</span>
-              </div>
-
-              <h3>{title}</h3>
-
-              <p className="collection-description">{description}</p>
-
-              <p className="collection-ideal">{ideal}</p>
-
-              <a href={whatsappLink} target="_blank" rel="noreferrer" className="collection-cta">
-                Consultar esta línea
-              </a>
-            </div>
-          </article>
+        {collections.map((collection) => (
+          <CollectionCard collection={collection} key={collection.title} />
         ))}
       </div>
     </section>

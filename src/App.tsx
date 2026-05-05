@@ -246,19 +246,13 @@ function Collections() {
 function Packaging() {
   return (
     <section className="section packaging">
-      <div className="mockup" aria-label="Mockup de empaque Bio Armonía">
-        <div className="box tall">
-          <BrandLogo variant="circular" className="package-logo" />
-          <h4>Nube de Avena</h4>
-          <p>Avena + miel</p>
-          <div className="window"></div>
-        </div>
-
-        <div className="box open">
-          <BrandLogo variant="icon" className="mini-logo" />
-          <h4>Hecho a mano</h4>
-          <p>Con ingredientes naturales y mucho cuidado.</p>
-        </div>
+      <div className="mockup packaging-photo" aria-label="Empaques Bio Armonía">
+        <img
+          src="/images/empaques.png"
+          alt="Empaques y jabones Bio Armonía"
+          className="packaging-image"
+          loading="lazy"
+        />
       </div>
 
       <div className="packaging-copy">
@@ -267,8 +261,8 @@ function Packaging() {
         <h2>Empaques que cuidan tu jabón y el planeta</h2>
 
         <p>
-          Diseñamos empaques más limpios, prácticos y bonitos para proteger cada jabón, elevar la experiencia
-          y hacerlo ideal para uso personal o regalo.
+          Diseñamos empaques más limpios, prácticos y bonitos para proteger cada jabón,
+          elevar la experiencia y hacerlo ideal para uso personal o regalo.
         </p>
 
         <div className="feature-list">

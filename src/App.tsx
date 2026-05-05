@@ -18,7 +18,7 @@ import {
 const whatsappNumber = '50688970499';
 
 const instagramUrl = 'https://www.instagram.com/bio_armonia_corporal';
-const facebookUrl = 'https://www.facebook.com/BIOArmoniaCorporal';
+const facebookUrl = 'https://www.facebook.com/profile.php?id=100066801256439';
 
 const whatsappText = 'Hola, quiero recibir el catálogo de Bio Armonía';
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;

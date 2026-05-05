@@ -13,7 +13,6 @@ import {
   Droplets,
   Instagram,
   Facebook,
-  Truck,
   ChevronDown
 } from 'lucide-react';
 
@@ -445,50 +444,14 @@ function Packaging() {
 }
 
 function HowToOrder() {
-  const steps = [
-    {
-      number: '1',
-      title: 'Elegí tu línea o producto',
-      text: 'Podés escoger entre cuidado diario, rituales corporales, cuidado sensible o detalles para regalar.'
-    },
-    {
-      number: '2',
-      title: 'Escribinos por WhatsApp',
-      text: 'Te compartimos catálogo, disponibilidad y precios.'
-    },
-    {
-      number: '3',
-      title: 'Coordinamos entrega',
-      text: 'Preparamos tu pedido con cuidado y te indicamos opciones de entrega.'
-    },
-  ];
-
   return (
-    <section className="section order">
-      <div className="section-title">
-        <div className="order-badge">
-          <BrandLogo variant="icon" className="section-icon-logo" />
-          <span className="order-badge-icon">
-            <Truck size={15} />
-          </span>
-        </div>
-
-        <h2>Cómo hacer tu pedido</h2>
-
-        <p>
-          Simple, directo y acompañado. Queremos ayudarte a encontrar el jabón ideal para vos.
-        </p>
-      </div>
-
-      <div className="steps">
-        {steps.map((step) => (
-          <article key={step.number}>
-            <strong>{step.number}</strong>
-            <h3>{step.title}</h3>
-            <p>{step.text}</p>
-          </article>
-        ))}
-      </div>
+    <section className="section order order-visual-section">
+      <img
+        src="/images/pedidos.png"
+        alt="Cómo hacer tu pedido en Bio Armonía"
+        className="order-visual-image"
+        loading="lazy"
+      />
     </section>
   );
 }

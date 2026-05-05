@@ -10,7 +10,8 @@ import {
   Flower2,
   Droplets,
   Instagram,
-  Facebook
+  Facebook,
+  Truck
 } from 'lucide-react';
 
 // CONFIGURACIÓN PRINCIPAL
@@ -22,10 +23,10 @@ const facebookUrl = 'https://www.facebook.com/BIOArmoniaCorporal';
 const whatsappText = 'Hola, quiero recibir el catálogo de Bio Armonía';
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
 
-// LOGOS
+// LOGOS - usando los nombres exactos que tenés ahorita en public/images
 const logoPrincipal = '/images/logo-principal.png';
-const logoCircular = '/images/logo-circular.png';
-const iconoMarca = '/images/icono.png';
+const logoCircular = '/images/Logo Circular_claro.png';
+const iconoMarca = '/images/Icono (2).png';
 
 const collections = [
   {
@@ -287,7 +288,12 @@ function HowToOrder() {
   return (
     <section className="section order">
       <div className="section-title">
-        <BrandLogo variant="icon" className="section-icon-logo" />
+        <div className="order-badge">
+          <BrandLogo variant="icon" className="section-icon-logo" />
+          <span className="order-badge-icon">
+            <Truck size={15} />
+          </span>
+        </div>
 
         <h2>Cómo hacer tu pedido</h2>
 

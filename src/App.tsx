@@ -14,8 +14,6 @@ import {
 } from 'lucide-react';
 
 // CONFIGURACIÓN PRINCIPAL
-// Reemplazá este número por el WhatsApp real de Bio Armonía.
-// Debe incluir código de país. Ejemplo Costa Rica: 50688888888
 const whatsappNumber = '50688970499';
 
 const instagramUrl = 'https://www.instagram.com/bio_armonia_corporal';
@@ -23,6 +21,11 @@ const facebookUrl = 'https://www.facebook.com/BIOArmoniaCorporal';
 
 const whatsappText = 'Hola, quiero recibir el catálogo de Bio Armonía';
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
+
+// LOGOS
+const logoPrincipal = '/images/logo-principal.png';
+const logoCircular = '/images/logo-circular.png';
+const iconoMarca = '/images/icono.png';
 
 const collections = [
   {
@@ -59,14 +62,27 @@ const collections = [
   },
 ];
 
-function LogoMark() {
+function BrandLogo({
+  variant = 'principal',
+  className = '',
+}: {
+  variant?: 'principal' | 'circular' | 'icon';
+  className?: string;
+}) {
+  const src =
+    variant === 'principal'
+      ? logoPrincipal
+      : variant === 'circular'
+      ? logoCircular
+      : iconoMarca;
+
   return (
-    <div className="logo-mark" aria-label="Bio Armonía">
-      <div className="leaf left"></div>
-      <div className="leaf right"></div>
-      <div className="sun"></div>
-      <div className="arc"></div>
-    </div>
+    <img
+      src={src}
+      alt="Bio Armonía Jabones Artesanales"
+      className={className}
+      loading="eager"
+    />
   );
 }
 
@@ -74,8 +90,7 @@ function Header() {
   return (
     <header className="header">
       <a href="#inicio" className="brand-small" aria-label="Ir al inicio">
-        <LogoMark />
-        <span>Bio Armonía</span>
+        <BrandLogo variant="principal" className="header-logo" />
       </a>
 
       <nav aria-label="Navegación principal">
@@ -113,9 +128,7 @@ function Hero() {
       </div>
 
       <div className="hero-card">
-        <LogoMark />
-        <h2>BIO ARMONÍA</h2>
-        <p>Jabones artesanales</p>
+        <BrandLogo variant="principal" className="hero-logo" />
         <span>Natural • Artesanal • Con cuidado</span>
       </div>
     </section>
@@ -144,7 +157,7 @@ function BrandEssence() {
   return (
     <section id="esencia" className="section essence">
       <div className="section-title">
-        <span className="dot"></span>
+        <BrandLogo variant="icon" className="section-icon-logo" />
 
         <h2>Una nueva etapa para Bio Armonía</h2>
 
@@ -178,7 +191,7 @@ function Collections() {
   return (
     <section id="colecciones" className="section collections">
       <div className="section-title">
-        <span className="dot"></span>
+        <BrandLogo variant="icon" className="section-icon-logo" />
 
         <h2>Nuestras colecciones</h2>
 
@@ -218,13 +231,14 @@ function Packaging() {
     <section className="section packaging">
       <div className="mockup" aria-label="Mockup de empaque Bio Armonía">
         <div className="box tall">
-          <LogoMark />
+          <BrandLogo variant="circular" className="package-logo" />
           <h4>Nube de Avena</h4>
           <p>Avena + miel</p>
           <div className="window"></div>
         </div>
 
         <div className="box open">
+          <BrandLogo variant="icon" className="mini-logo" />
           <h4>Hecho a mano</h4>
           <p>Con ingredientes naturales y mucho cuidado.</p>
         </div>
@@ -273,7 +287,7 @@ function HowToOrder() {
   return (
     <section className="section order">
       <div className="section-title">
-        <span className="dot"></span>
+        <BrandLogo variant="icon" className="section-icon-logo" />
 
         <h2>Cómo hacer tu pedido</h2>
 
@@ -299,7 +313,7 @@ function FinalCTA() {
   return (
     <section className="final-cta">
       <div>
-        <Heart size={26} />
+        <BrandLogo variant="icon" className="cta-logo" />
 
         <h2>Elegí el cuidado que tu piel necesita</h2>
 
@@ -317,7 +331,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div>
-        <LogoMark />
+        <BrandLogo variant="circular" className="footer-logo" />
         <p>Bio Armonía · Jabones artesanales</p>
       </div>
 

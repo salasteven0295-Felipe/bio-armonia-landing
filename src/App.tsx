@@ -248,7 +248,7 @@ function Packaging() {
     <section className="section packaging">
       <div className="mockup packaging-photo" aria-label="Empaques Bio Armonía">
         <img
-          src="/images/empaques.png"
+          src="/images/Empaques.png"
           alt="Empaques y jabones Bio Armonía"
           className="packaging-image"
           loading="lazy"

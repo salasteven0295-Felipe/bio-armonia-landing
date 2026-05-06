@@ -43,32 +43,38 @@ const collections = [
       {
         name: 'Nube de Avena',
         primary: 'Avena + miel',
-        benefit: 'Limpieza suave para todos los días.'
+        benefit: 'Limpieza suave para todos los días.',
+        image: '/images/jabones/01-esenciales-del-jardin/nube-de-avena.png'
       },
       {
         name: 'Panal de Seda',
         primary: 'Miel de abeja',
-        benefit: 'Cuidado diario con sensación nutritiva.'
+        benefit: 'Cuidado diario con sensación nutritiva.',
+        image: '/images/jabones/01-esenciales-del-jardin/panal-de-seda.png'
       },
       {
         name: 'Savia Serena',
         primary: 'Sábila natural',
-        benefit: 'Frescura y suavidad para la piel.'
+        benefit: 'Frescura y suavidad para la piel.',
+        image: '/images/jabones/01-esenciales-del-jardin/savia-serena.png'
       },
       {
         name: 'Brisa de Menta',
         primary: 'Menta fresca',
-        benefit: 'Sensación revitalizante y fresca.'
+        benefit: 'Sensación revitalizante y fresca.',
+        image: '/images/jabones/01-esenciales-del-jardin/brisa-de-menta.png'
       },
       {
         name: 'Respiro del Monte',
         primary: 'Romero + eucalipto',
-        benefit: 'Limpieza herbal con sensación refrescante.'
+        benefit: 'Limpieza herbal con sensación refrescante.',
+        image: '/images/jabones/01-esenciales-del-jardin/respiro-del-monte.png'
       },
       {
         name: 'Luz de Manzanilla',
         primary: 'Manzanilla',
-        benefit: 'Cuidado suave para una piel luminosa.'
+        benefit: 'Cuidado suave para una piel luminosa.',
+        image: '/images/jabones/01-esenciales-del-jardin/luz-de-manzanilla.png'
       },
     ],
   },
@@ -84,32 +90,38 @@ const collections = [
       {
         name: 'Bruma de Lavanda',
         primary: 'Lavanda',
-        benefit: 'Aroma relajante para una pausa nocturna.'
+        benefit: 'Aroma relajante para una pausa nocturna.',
+        image: '/images/jabones/02-rituales-del-cuerpo/bruma-de-lavanda.png'
       },
       {
         name: 'Cumbre Mineral',
         primary: 'Sal mineral',
-        benefit: 'Exfoliación natural y textura renovadora.'
+        benefit: 'Exfoliación natural y textura renovadora.',
+        image: '/images/jabones/02-rituales-del-cuerpo/cumbre-mineral.png'
       },
       {
         name: 'Fibra Viva',
         primary: 'Esponja natural',
-        benefit: 'Exfoliación corporal con sensación de spa.'
+        benefit: 'Exfoliación corporal con sensación de spa.',
+        image: '/images/jabones/02-rituales-del-cuerpo/fibra-viva.png'
       },
       {
         name: 'Carbón Noble',
         primary: 'Carbón activado',
-        benefit: 'Limpieza profunda y sensación purificante.'
+        benefit: 'Limpieza profunda y sensación purificante.',
+        image: '/images/jabones/02-rituales-del-cuerpo/carbon-noble.png'
       },
       {
         name: 'Pulso Sereno',
         primary: 'Barra de masaje',
-        benefit: 'Pausa corporal y experiencia sensorial.'
+        benefit: 'Pausa corporal y experiencia sensorial.',
+        image: '/images/jabones/02-rituales-del-cuerpo/pulso-sereno.png'
       },
       {
         name: 'Rosa de Alba',
         primary: 'Rosa / rosa mosqueta',
-        benefit: 'Suavidad floral y cuidado delicado.'
+        benefit: 'Suavidad floral y cuidado delicado.',
+        image: '/images/jabones/02-rituales-del-cuerpo/rosa-de-alba.png'
       },
     ],
   },
@@ -125,27 +137,32 @@ const collections = [
       {
         name: 'Primer Abrazo',
         primary: 'Cuidado suave',
-        benefit: 'Pensado para piel delicada y rutinas tiernas.'
+        benefit: 'Pensado para piel delicada y rutinas tiernas.',
+        image: '/images/jabones/03-cuidado-sensible/primer-abrazo.png'
       },
       {
         name: 'Abrazo Sereno',
         primary: 'Fórmula amable',
-        benefit: 'Ideal para piel madura o sensible.'
+        benefit: 'Ideal para piel madura o sensible.',
+        image: '/images/jabones/03-cuidado-sensible/abrazo-sereno.png'
       },
       {
         name: 'Nube de Cuna',
         primary: 'Manzanilla + miel',
-        benefit: 'Suavidad diaria con sensación calmante.'
+        benefit: 'Suavidad diaria con sensación calmante.',
+        image: '/images/jabones/03-cuidado-sensible/nube-de-cuna.png'
       },
       {
         name: 'Luna de Sábila',
         primary: 'Sábila',
-        benefit: 'Frescura suave para piel delicada.'
+        benefit: 'Frescura suave para piel delicada.',
+        image: '/images/jabones/03-cuidado-sensible/luna-de-sabila.png'
       },
       {
         name: 'Nido de Miel',
         primary: 'Miel natural',
-        benefit: 'Baño tierno con sensación nutritiva.'
+        benefit: 'Baño tierno con sensación nutritiva.',
+        image: '/images/jabones/03-cuidado-sensible/nido-de-miel.png'
       },
     ],
   },
@@ -161,32 +178,38 @@ const collections = [
       {
         name: 'Flores del Jardín',
         primary: 'Jabones florales',
-        benefit: 'Detalles decorativos para regalar.'
+        benefit: 'Detalles decorativos para regalar.',
+        image: '/images/jabones/04-detalles-del-jardin/flores-del-jardin.png'
       },
       {
         name: 'Osito de Cuna',
         primary: 'Figura tierna',
-        benefit: 'Ideal para bebé, recuerdos o regalos especiales.'
+        benefit: 'Ideal para bebé, recuerdos o regalos especiales.',
+        image: '/images/jabones/04-detalles-del-jardin/osito-de-cuna.png'
       },
       {
         name: 'Angelito de Miel',
         primary: 'Pieza simbólica',
-        benefit: 'Detalle delicado con intención artesanal.'
+        benefit: 'Detalle delicado con intención artesanal.',
+        image: '/images/jabones/04-detalles-del-jardin/angelito-de-miel.png'
       },
       {
         name: 'Mini Abrazo',
         primary: 'Mini jabones',
-        benefit: 'Perfectos para detalles, kits o pequeños obsequios.'
+        benefit: 'Perfectos para detalles, kits o pequeños obsequios.',
+        image: '/images/jabones/04-detalles-del-jardin/mini-abrazo.png'
       },
       {
         name: 'Caja Jardín',
         primary: 'Set de regalo',
-        benefit: 'Presentación lista para entregar.'
+        benefit: 'Presentación lista para entregar.',
+        image: '/images/jabones/04-detalles-del-jardin/caja-jardin.png'
       },
       {
         name: 'Edición de Estación',
         primary: 'Temporada',
-        benefit: 'Detalles especiales según disponibilidad.'
+        benefit: 'Detalles especiales según disponibilidad.',
+        image: '/images/jabones/04-detalles-del-jardin/edicion-de-estacion.png'
       },
     ],
   },
@@ -366,12 +389,21 @@ function CollectionCard({
             <div className="soap-list">
               {collection.soaps.map((soap) => (
                 <div className="soap-item" key={soap.name}>
-                  <div>
-                    <strong>{soap.name}</strong>
-                    <span>{soap.primary}</span>
-                  </div>
+                  <img
+                    src={soap.image}
+                    alt={`${soap.name} - Bio Armonía`}
+                    className="soap-image"
+                    loading="lazy"
+                  />
 
-                  <p>{soap.benefit}</p>
+                  <div className="soap-copy">
+                    <div className="soap-heading">
+                      <strong>{soap.name}</strong>
+                      <span>{soap.primary}</span>
+                    </div>
+
+                    <p>{soap.benefit}</p>
+                  </div>
                 </div>
               ))}
             </div>

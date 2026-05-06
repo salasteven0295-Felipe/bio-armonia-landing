@@ -247,8 +247,9 @@ function Header() {
       </a>
 
       <nav aria-label="Navegación principal">
+        <a href="#esencia">Nuestra Esencia</a>
+        <a href="#historia">Nuestra Historia</a>
         <a href="#colecciones">Colecciones</a>
-        <a href="#esencia">Nuestra esencia</a>
         <a href={whatsappLink} target="_blank" rel="noreferrer" className="nav-cta">
           Consultar
         </a>
@@ -342,7 +343,7 @@ function BrandEssence() {
 
 function BrandStory() {
   return (
-    <section className="section brand-story">
+    <section id="historia" className="section brand-story">
       <div className="story-card">
         <div className="story-visual">
           <BrandLogo variant="icon" className="story-icon" />

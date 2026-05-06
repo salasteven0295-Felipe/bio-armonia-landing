@@ -340,6 +340,52 @@ function BrandEssence() {
   );
 }
 
+function BrandStory() {
+  return (
+    <section className="section brand-story">
+      <div className="story-card">
+        <div className="story-visual">
+          <BrandLogo variant="icon" className="story-icon" />
+
+          <div className="story-quote">
+            <span>“</span>
+            <p>Armonía entre lo natural y la salud.</p>
+          </div>
+        </div>
+
+        <div className="story-copy">
+          <p className="eyebrow">Nuestra historia</p>
+
+          <h2>Una marca nacida del aprendizaje, la creatividad y el cuidado</h2>
+
+          <p>
+            Bio Armonía nació después de la pandemia, en un momento de cambio,
+            necesidad y aprendizaje. Lo que empezó como una forma de salir adelante,
+            poco a poco se transformó en una manera de crear, cuidar y demostrar que
+            siempre se puede aprender algo nuevo.
+          </p>
+
+          <p>
+            Cada jabón nace de la combinación entre creatividad e ingredientes naturales:
+            avena, miel, sábila, lavanda, manzanilla, carbón activado, menta, eucalipto,
+            aceites y esencias pensadas para acompañar distintas necesidades de la piel.
+          </p>
+
+          <p>
+            Más que hacer jabones, Bio Armonía busca ofrecer una experiencia de limpieza
+            suave, aroma agradable y cuidado real; especialmente para quienes prefieren
+            productos menos industrializados y más conectados con la naturaleza.
+          </p>
+
+          <div className="story-signature">
+            Hecho a mano, con paciencia, intención y amor por cada detalle.
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function CollectionCard({
   collection,
 }: {
@@ -539,6 +585,7 @@ export function App() {
       <main>
         <Hero />
         <BrandEssence />
+        <BrandStory />
         <Collections />
         <Packaging />
         <HowToOrder />

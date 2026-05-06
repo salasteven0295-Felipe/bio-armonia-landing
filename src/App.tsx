@@ -346,11 +346,16 @@ function BrandStory() {
     <section id="historia" className="section brand-story">
       <div className="story-card">
         <div className="story-visual">
-          <BrandLogo variant="icon" className="story-icon" />
+          <img
+            src="/images/historia-bio-armonia.png"
+            alt="Proceso artesanal de jabones naturales Bio Armonía"
+            className="story-image"
+            loading="lazy"
+          />
 
-          <div className="story-quote">
-            <span>“</span>
-            <p>Armonía entre lo natural y la salud.</p>
+          <div className="story-badge">
+            <span>Hecho a mano</span>
+            <strong>Con ingredientes naturales</strong>
           </div>
         </div>
 
@@ -379,7 +384,7 @@ function BrandStory() {
           </p>
 
           <div className="story-signature">
-            Hecho a mano, con paciencia, intención y amor por cada detalle.
+            Armonía entre lo natural y la salud.
           </div>
         </div>
       </div>

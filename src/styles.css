@@ -470,37 +470,66 @@ h3 {
 
 .soap-list {
   display: grid;
-  gap: 12px;
+  gap: 14px;
 }
 
 .soap-item {
-  padding: 14px 14px 13px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.72);
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
   border: 1px solid rgba(155, 162, 140, 0.16);
+  box-shadow: 0 10px 24px rgba(71, 72, 58, 0.04);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
-.soap-item > div {
+.soap-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(122, 127, 59, 0.28);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.soap-image {
+  width: 92px;
+  height: 92px;
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid rgba(155, 162, 140, 0.18);
+  background: var(--warm-cream);
+  box-shadow: 0 10px 20px rgba(71, 72, 58, 0.08);
+}
+
+.soap-copy {
+  min-width: 0;
+}
+
+.soap-heading {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 14px;
+  gap: 12px;
   margin-bottom: 6px;
 }
 
-.soap-item strong {
+.soap-heading strong {
   color: var(--olive);
   font-size: 15px;
+  line-height: 1.25;
 }
 
-.soap-item span {
+.soap-heading span {
   color: var(--sage);
   font-size: 13px;
   font-weight: 700;
   text-align: right;
+  line-height: 1.25;
 }
 
-.soap-item p {
+.soap-copy p {
   margin: 0;
   color: var(--dark);
   line-height: 1.55;
@@ -661,54 +690,27 @@ h3 {
 }
 
 /* =========================
-   ORDER
+   ORDER VISUAL
 ========================= */
 
 .order {
   border-top: 1px solid rgba(155, 162, 140, 0.2);
 }
 
-.order-badge {
-  position: relative;
-  width: fit-content;
-  margin: 0 auto 18px;
+.order-visual-section {
+  max-width: 1120px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
-.order-badge .section-icon-logo {
-  margin-bottom: 0;
-}
-
-.order-badge-icon {
-  position: absolute;
-  right: -10px;
-  bottom: -6px;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--olive);
-  color: white;
-  display: grid;
-  place-items: center;
-  border: 3px solid var(--cream);
-}
-
-.steps {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.steps strong {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: var(--olive);
-  color: #fff;
-  margin-bottom: 18px;
-}
-
-.steps h3 {
-  font-size: 24px;
+.order-visual-image {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 28px;
+  border: 1px solid rgba(155, 162, 140, 0.22);
+  box-shadow: 0 26px 70px rgba(71, 72, 58, 0.1);
 }
 
 /* =========================
@@ -888,14 +890,35 @@ h3 {
     padding: 14px;
   }
 
-  .soap-item > div {
+  .soap-list {
+    gap: 12px;
+  }
+
+  .soap-item {
+    grid-template-columns: 78px 1fr;
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .soap-image {
+    width: 78px;
+    height: 78px;
+    border-radius: 14px;
+  }
+
+  .soap-heading {
     flex-direction: column;
     align-items: flex-start;
     gap: 3px;
+    margin-bottom: 5px;
   }
 
-  .soap-item span {
+  .soap-heading span {
     text-align: left;
+  }
+
+  .soap-copy p {
+    font-size: 13px;
   }
 
   .mockup {
@@ -904,6 +927,15 @@ h3 {
   }
 
   .packaging-image {
+    border-radius: 22px;
+  }
+
+  .order-visual-section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .order-visual-image {
     border-radius: 22px;
   }
 
@@ -931,5 +963,16 @@ h3 {
 
   .footer-logo {
     width: 68px;
+  }
+}
+
+@media (max-width: 520px) {
+  .soap-item {
+    grid-template-columns: 1fr;
+  }
+
+  .soap-image {
+    width: 100%;
+    height: 170px;
   }
 }

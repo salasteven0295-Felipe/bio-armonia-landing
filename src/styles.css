@@ -77,10 +77,11 @@ img {
 .header nav {
   display: flex;
   align-items: center;
-  gap: 34px;
+  gap: 26px;
   font-family: 'Newsreader', serif;
   color: var(--olive);
-  font-size: 22px;
+  font-size: 20px;
+  white-space: nowrap;
 }
 
 .header nav a {
@@ -910,6 +911,22 @@ h3 {
 }
 
 /* =========================
+   TABLET HEADER
+========================= */
+
+@media (max-width: 1100px) {
+  .header nav {
+    gap: 18px;
+    font-size: 18px;
+  }
+
+  .nav-cta {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
+
+/* =========================
    RESPONSIVE
 ========================= */
 
@@ -928,8 +945,8 @@ h3 {
   }
 
   .header nav {
-    gap: 14px;
-    font-size: 18px;
+    gap: 12px;
+    font-size: 17px;
   }
 
   .header nav a:not(.nav-cta) {

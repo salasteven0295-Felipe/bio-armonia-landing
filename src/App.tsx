@@ -13,14 +13,17 @@ import {
   Droplets,
   Instagram,
   Facebook,
+  Mail,
   ChevronDown
 } from 'lucide-react';
 
 // CONFIGURACIÓN PRINCIPAL
 const whatsappNumber = '50688970499';
 
-const instagramUrl = 'https://www.instagram.com/bio_armonia_corporal';
+const instagramUrl = 'https://www.instagram.com/bioarmonia.cr/';
 const facebookUrl = 'https://www.facebook.com/profile.php?id=100066801256439';
+const companyEmail = 'contacto@bioarmoniacr.com';
+const emailLink = `mailto:${companyEmail}`;
 
 const whatsappText = 'Hola, quiero recibir el catálogo de Bio Armonía';
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
@@ -283,7 +286,7 @@ function Hero() {
 
       <div className="hero-card">
         <BrandLogo variant="principal" className="hero-logo" />
-        <span>Natural • Artesanal • Con cuidado</span>
+        <span>Natural • Artesanal • Con delicadeza</span>
       </div>
     </section>
   );
@@ -303,7 +306,7 @@ function BrandEssence() {
     },
     {
       icon: Heart,
-      title: 'Con cuidado',
+      title: 'Con delicadeza',
       text: 'Fórmulas creadas con intención para acompañar tu rutina y regalar bienestar.'
     },
   ];
@@ -577,6 +580,10 @@ function Footer() {
 
         <a href={whatsappLink} target="_blank" rel="noreferrer">
           <MessageCircle size={18} /> WhatsApp
+        </a>
+
+        <a href={emailLink}>
+          <Mail size={18} /> {companyEmail}
         </a>
       </div>
     </footer>
